@@ -41,6 +41,10 @@
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/UserRules/=5f0fdb63_002Dc892_002D4d2c_002D9324_002D15c80b22a7ef/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/CodeStyle/Naming/CSharpNaming/UserRules/=5f0fdb63_002Dc892_002D4d2c_002D9324_002D15c80b22a7ef/@EntryIndexRemoved">True</s:Boolean>
 	<s:String x:Key="/Default/CustomTools/CustomToolsData/@EntryValue"></s:String>
+	<s:Boolean x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EPsi_002ECSharp_002ECodeStyle_002ECSharpKeepExistingMigration/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EPsi_002ECSharp_002ECodeStyle_002ECSharpPlaceEmbeddedOnSameLineMigration/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EPsi_002ECSharp_002ECodeStyle_002ECSharpUseContinuousIndentInsideBracesMigration/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EPsi_002ECSharp_002ECodeStyle_002ESettingsUpgrade_002EMigrateBlankLinesAroundFieldToBlankLinesAroundProperty/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=75FC537FF49AEE4195F9BBDE96B97443/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=75FC537FF49AEE4195F9BBDE96B97443/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=75FC537FF49AEE4195F9BBDE96B97443/Categories/=Imported_0020Visual_0020C_0023_0020Snippets/@EntryIndexedValue">Imported Visual C# Snippets</s:String>
