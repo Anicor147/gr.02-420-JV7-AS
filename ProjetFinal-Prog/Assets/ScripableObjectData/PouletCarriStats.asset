@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cd550b654818741b3e4ca65a2f3848, type: 3}
   m_Name: PouletCarriStats
   m_EditorClassIdentifier: 
-  _recoverHealth: 0
+  _recoverHealth: 4

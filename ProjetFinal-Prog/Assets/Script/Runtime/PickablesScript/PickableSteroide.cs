@@ -4,14 +4,16 @@ using UnityEngine;
 
 namespace Script.Runtime.PickablesScript
 {
-    public class PickableChicken : MonoBehaviour
+    public class PickableSteroide : MonoBehaviour
     {
-        [SerializeField] private SoChickenDataScript _soChickenDataScript;
+        [SerializeField] private float _increaseMaxHp;
+        private SoChickenDataScript _soChickenDataScript;
+
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            other.GetComponent<PlayerController>().UpdateHp(_soChickenDataScript.RecoverHealth);
+            other.GetComponent<PlayerController>().IncreaseMaxHp(_increaseMaxHp);
             Destroy(gameObject);
         }
     }

@@ -1,29 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMouvement : MonoBehaviour
+namespace Script.Runtime.RuntimeScript
 {
-    [SerializeField] private Grid _grid;
-    
-
-    private void Update()
+    public class PlayerMouvement : MonoBehaviour
     {
-        switch (Input.inputString)
+        private Rigidbody2D _rigidbody2D;
+
+        private void Awake()
         {
-            case "d" :
-                transform.position += Vector3.right;
-                break;
-            case "a":
-                transform.position += Vector3.left;
-                break;
-            case "s":
-                transform.position += Vector3.down;
-                break;
-            case "w":
-                transform.position += Vector3.up;
-                break;
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
+        private void Update()
+        {
+            switch (Input.inputString)
+            {
+                case "d":
+                    _rigidbody2D.MovePosition(_rigidbody2D.position + Vector2.right);
+                    break;
+                case "a":
+                    _rigidbody2D.MovePosition(_rigidbody2D.position + Vector2.left);
+                    break;
+                case "s":
+                    _rigidbody2D.MovePosition(_rigidbody2D.position + Vector2.down);
+                    break;
+                case "w":
+                    _rigidbody2D.MovePosition(_rigidbody2D.position + Vector2.up);
+                    break;
+            }
         }
     }
 }
