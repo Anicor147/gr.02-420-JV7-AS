@@ -1,17 +1,15 @@
 using Script.Runtime.RuntimeScript;
-using Script.Runtime.ScriptableObjectScript;
 using UnityEngine;
 
 namespace Script.Runtime.PickablesScript
 {
-    public class PickableChicken : MonoBehaviour
+    public class PickableWallDestroy : MonoBehaviour
     {
-        [SerializeField] private SoChickenDataScript _soChickenDataScript;
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            other.GetComponent<PlayerController>().UpdateHp(_soChickenDataScript.RecoverHealth);
+            if (other.GetComponent<DestroyWall>().IsMaxed) return;
+            other.GetComponent<DestroyWall>().UpdateCharges();
             Destroy(gameObject);
         }
     }

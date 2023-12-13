@@ -7,10 +7,14 @@ namespace Script.Runtime.RuntimeScript
         private float _hpMax;
         private float _currentHp;
 
-
         public void UpdateHp(float value)
         {
             _currentHp += value;
+        }
+
+        public void IncreaseMaxHp(float value)
+        {
+            _hpMax = value;
         }
     }
 }
