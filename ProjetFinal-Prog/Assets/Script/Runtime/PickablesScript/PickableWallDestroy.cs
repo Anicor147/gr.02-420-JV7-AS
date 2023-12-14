@@ -8,7 +8,7 @@ namespace Script.Runtime.PickablesScript
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            if (other.GetComponent<DestroyWall>().IsMaxed) return;
+            if (other.GetComponent<DestroyWall>().ChargeIsMaxed) return;
             other.GetComponent<DestroyWall>().UpdateCharges();
             Destroy(gameObject);
         }
