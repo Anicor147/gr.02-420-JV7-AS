@@ -40,6 +40,7 @@ namespace Script.Runtime.RuntimeScript
                     _tilemap.SetTile(_tilemap.WorldToCell(hitPosition), null);
                     _rigidbody2D.MovePosition(cellCenterForPlayer);
                     _numberOfCharge--;
+                    Debug.Log(_numberOfCharge);
                     ChargeIsMaxed = false;
                     break;
                 }
