@@ -6,7 +6,8 @@ namespace Script.Runtime.RuntimeScript
     public class PlayerMouvement : MonoBehaviour
     {
         private Rigidbody2D _rigidbody2D;
-        [SerializeField]private Tilemap _tilemap;
+        [SerializeField] private Tilemap _tilemap;
+
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -29,7 +30,7 @@ namespace Script.Runtime.RuntimeScript
                     _rigidbody2D.MovePosition(_rigidbody2D.position + Vector2.up);
                     break;
             }
-        
+
             var cellPositionForPlayer = _tilemap.WorldToCell(transform.position);
             var cellCenterForPlayer = _tilemap.GetCellCenterWorld(cellPositionForPlayer);
             transform.position = cellCenterForPlayer;
