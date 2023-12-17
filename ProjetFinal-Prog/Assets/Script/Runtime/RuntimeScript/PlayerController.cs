@@ -8,6 +8,7 @@ namespace Script.Runtime.RuntimeScript
     {
         private float _hpMax;
         private float _currentHp = 10f;
+        internal static event Action<float> OnHpChange;
 
 
         private void Start()
