@@ -15,11 +15,15 @@ namespace Script.Runtime.RuntimeScript
             PlayerMouvement.OnMovement += UpdateHp;
         }
 
+        public static event Action<float> OnHpChange;
+
         public void UpdateHp(float value)
         {
+
             _currentHp = Mathf.Clamp(_currentHp + value, 0, _hpMax);
             if (_currentHp == 0) Death();
             //add UI update line
+
         }
 
 
