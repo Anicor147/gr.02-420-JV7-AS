@@ -28,7 +28,7 @@ namespace Script.Runtime.RuntimeScript
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Wall") && _numberOfCharge > 0)
+            if (other.gameObject.CompareTag("DestructiveWall") && _numberOfCharge > 0)
             {
                 var hitPosition = Vector3.zero;
                 foreach (var hit in other.contacts)
