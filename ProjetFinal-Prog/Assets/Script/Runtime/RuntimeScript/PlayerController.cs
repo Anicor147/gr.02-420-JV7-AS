@@ -9,12 +9,20 @@ namespace Script.Runtime.RuntimeScript
 
         public void UpdateHp(float value)
         {
-            _currentHp += value;
+            _currentHp = Mathf.Clamp(_currentHp + value, 0, _hpMax);
+            if (_currentHp == 0) Death();
+            //add UI update line
         }
+
 
         public void IncreaseMaxHp(float value)
         {
-            _hpMax = value;
+            _hpMax += value;
+            //add UI update line
+        }
+        private void Death()
+        {
+            
         }
     }
 }
