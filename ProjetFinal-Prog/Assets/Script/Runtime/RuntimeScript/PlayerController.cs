@@ -7,6 +7,7 @@ namespace Script.Runtime.RuntimeScript
 {
     public class PlayerController : MonoBehaviour
     {
+
         private float _hpMax = 20f;
         private float _currentHp = 20f;
 
@@ -17,6 +18,7 @@ namespace Script.Runtime.RuntimeScript
         }
         internal static event Action<float> OnHpChange;
         internal static event Action OnSteroidTake;
+
 
 
         private void Start()
