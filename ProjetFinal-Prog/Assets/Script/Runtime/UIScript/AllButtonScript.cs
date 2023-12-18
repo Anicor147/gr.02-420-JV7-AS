@@ -15,4 +15,14 @@ public class NewBehaviourScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void LevelOne()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void ExitApp()
+    {
+        Application.Quit();
+    }
 }
