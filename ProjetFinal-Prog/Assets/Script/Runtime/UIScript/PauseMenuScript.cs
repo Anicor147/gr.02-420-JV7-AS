@@ -1,19 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenuScript : MonoBehaviour
+namespace Script.Runtime.UIScript
 {
-    public static event Action onPress;
-
-    public void ReturnToGame()
+    public class PauseMenuScript : MonoBehaviour
     {
-        onPress?.Invoke();
-    }
+        public static event Action onPress;
 
-    public void BackToMenu()
-    {
+        public void ReturnToGame()
+        {
+            onPress?.Invoke();
+        }
+
+        public void BackToMenu()
+        {
         
+        }
     }
 }
