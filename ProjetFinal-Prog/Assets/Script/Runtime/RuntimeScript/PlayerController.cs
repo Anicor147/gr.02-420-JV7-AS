@@ -10,11 +10,10 @@ namespace Script.Runtime.RuntimeScript
 
         private float _hpMax = 20f;
         private float _currentHp = 20f;
-
         public float CurrentHp
         {
             get => _currentHp;
-            set => _currentHp = value;
+             set => _currentHp = value;
         }
         internal static event Action<float> OnHpChange;
         internal static event Action OnSteroidTake;
