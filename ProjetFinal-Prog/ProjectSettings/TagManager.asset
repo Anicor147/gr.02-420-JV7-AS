@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - DestructiveWall
+  - tilemap
   layers:
   - Default
   - TransparentFX

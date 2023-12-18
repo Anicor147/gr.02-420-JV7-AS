@@ -10,7 +10,8 @@ namespace Script.Runtime.RuntimeScript
 {
     public class PlayerMouvement : MonoBehaviour
     {
-        [SerializeField] private Tilemap _tilemap;
+        //[SerializeField] private Tilemap _tilemap;
+        private Tilemap _tilemap;
         private Rigidbody2D _rigidbody2D;
         internal static event Action<float> OnMovement;
         private float x;
@@ -21,8 +22,11 @@ namespace Script.Runtime.RuntimeScript
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            _tilemap = GameObject.FindWithTag("tilemap").GetComponent<Tilemap>();
             CenterPlayer();
         }
+
+        private void Start() { }
 
         private void Update()
         {
@@ -49,18 +53,18 @@ namespace Script.Runtime.RuntimeScript
             }
             Debug.Log(Input.inputString);
             */
-                if (Input.GetKeyDown(KeyCode.D)) _newPosition = Vector2.right;
-                else if (Input.GetKeyDown(KeyCode.A)) _newPosition = Vector2.left;
-                else if (Input.GetKeyDown(KeyCode.S)) _newPosition = Vector2.down;
-                else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
+            if (Input.GetKeyDown(KeyCode.D)) _newPosition = Vector2.right;
+            else if (Input.GetKeyDown(KeyCode.A)) _newPosition = Vector2.left;
+            else if (Input.GetKeyDown(KeyCode.S)) _newPosition = Vector2.down;
+            else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
 
-                if (_newPosition == Vector2.zero) return;
+            if (_newPosition == Vector2.zero) return;
 
-                _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
+            _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
 
-                OnMovement?.Invoke(-1);
+            OnMovement?.Invoke(-1);
 
-                CenterPlayer();
+            CenterPlayer();
 
             /*else _isInputPressed = true;*/
         }
@@ -70,7 +74,7 @@ namespace Script.Runtime.RuntimeScript
             if(_isInputPressed)
             {
                 _isInputPressed = false;
-                
+
                 _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
 
                 OnMovement?.Invoke(-1);
