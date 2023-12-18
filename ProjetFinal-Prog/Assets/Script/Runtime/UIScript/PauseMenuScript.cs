@@ -5,11 +5,11 @@ namespace Script.Runtime.UIScript
 {
     public class PauseMenuScript : MonoBehaviour
     {
-        public static event Action onPress;
+        public static event Action OnPress;
 
         public void ReturnToGame()
         {
-            onPress?.Invoke();
+            OnPress?.Invoke();
         }
 
         public void BackToMenu()

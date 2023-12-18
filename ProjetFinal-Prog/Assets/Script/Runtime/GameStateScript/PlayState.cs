@@ -9,6 +9,7 @@ namespace Script.Runtime.GameStateSM_Script
         public override void UpdateState()
         {
             GameStateSM.Instance.PauseMenuCanvas.SetActive(false);
+            GameStateSM.Instance.GameOverCanvas.SetActive(false);
             Time.timeScale = 1;
             base.UpdateState();
         }

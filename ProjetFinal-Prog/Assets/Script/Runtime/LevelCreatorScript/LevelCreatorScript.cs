@@ -20,12 +20,13 @@ namespace Script.Runtime.LevelCreatorScript
         [SerializeField] private GameObject _grassPrefab;
         [SerializeField] private GameObject _homePrefab;
         [SerializeField] private Tilemap _tilemap;
-        [SerializeField] private GameObject _objectParent; 
+        [SerializeField] private GameObject _objectParent;
         [SerializeField]private GameObject _solidWall;
         private GameObject _player;
 
         private void Start()
         {
+            _levelFileName = "Level" + GameObject.FindWithTag("LevelSelect").GetComponent<LevelSelector>().CurrentLevel;
             _player = GameObject.FindWithTag("Player");
             CreateLevel();
         }

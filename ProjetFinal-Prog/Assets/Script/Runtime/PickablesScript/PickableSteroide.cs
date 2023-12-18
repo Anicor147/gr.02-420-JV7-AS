@@ -8,12 +8,5 @@ namespace Script.Runtime.PickablesScript
     {
         [SerializeField] private float _increaseMaxHp;
         private SoChickenDataScript _soChickenDataScript;
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (!other.gameObject.CompareTag("Player")) return;
-            other.GetComponent<PlayerController>().IncreaseMaxHp(_increaseMaxHp);
-            Destroy(gameObject);
-        }
     }
 }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class NewBehaviourScript : MonoBehaviour
 {
+    
     public void MainMenuButton()
     {
         SceneManager.LoadSceneAsync(0);
@@ -25,4 +27,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoToNextLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.UnloadSceneAsync(2);
+        GameObject.FindWithTag("LevelSelect").GetComponent<LevelSelector>().CurrentLevel++;
+    }
+    
 }

@@ -7,7 +7,6 @@ namespace Script.Runtime.RuntimeScript
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private GameObject _losingScreen;
         private float _hpMax = 20f;
         private float _currentHp = 20f;
         public float CurrentHp
@@ -16,7 +15,7 @@ namespace Script.Runtime.RuntimeScript
              set => _currentHp = value;
         }
         internal static event Action<float> OnHpChange;
-        internal static event Action OnSteroidTake;
+        internal static event Action OnDeath;
 
 
 
@@ -28,21 +27,12 @@ namespace Script.Runtime.RuntimeScript
         public void UpdateHp(float value)
         {
             _currentHp = Mathf.Clamp(_currentHp + value, 0, _hpMax);
-            //if (_currentHp == 0) Death();
+            if (_currentHp == 0) Death();
             OnHpChange?.Invoke(value);
-            Debug.Log(_currentHp.ToString());
-        }
-
-
-        public void IncreaseMaxHp(float value)
-        {
-            _hpMax += value;
-            OnSteroidTake?.Invoke();
         }
         private void Death()
         {
-            Destroy(gameObject);
-            //add GameOverState line
+            OnDeath?.Invoke();
         }
 
         private void OnDisable()
