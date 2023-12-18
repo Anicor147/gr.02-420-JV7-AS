@@ -248,10 +248,11 @@ MonoBehaviour:
   _levelFileName: Level0
   _wallPrefab: {fileID: 6442267501912039763, guid: 630c2b8e0590b564c93548aab5c434b4, type: 3}
   _gorillaPrefab: {fileID: 6798368259982778577, guid: bd480b6c902631547834cdf7b5d928be, type: 3}
-  _chickenPrefabs:
+  _itemsPrefabs:
   - {fileID: 323451716093318716, guid: 2fe16dcb600214b408ac9f8a3176ca59, type: 3}
   - {fileID: 7200303883531065483, guid: 31a36dc1d0783c54983dda4618596183, type: 3}
   - {fileID: 7710545052670980202, guid: a2cc472e64f61a74d8dd0665604ab668, type: 3}
+  - {fileID: 4526825594024633421, guid: ad396513f2a33e34bbe90e8216dfa97a, type: 3}
   _grassPrefab: {fileID: 5233627375488083835, guid: 0c3a7e9af5b8059458ea4bd4bfa9ffe2, type: 3}
   _homePrefab: {fileID: 5009322519395730128, guid: 0bbd8d87798cff940996820af6654965, type: 3}
   _tilemap: {fileID: 518884589}

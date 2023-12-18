@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    
+    [SerializeField] private Canvas _settingCanvas;
     public void MainMenuButton()
     {
         Time.timeScale = 1;
@@ -17,7 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+    
     public void LevelOne()
     {
         Time.timeScale = 1;
@@ -39,5 +39,14 @@ public class NewBehaviourScript : MonoBehaviour
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
         gameObject.SetActive(true);
     }
-    
+
+    public void OpenSetting()
+    {
+        _settingCanvas.gameObject.SetActive(true);
+    }
+
+    public void CloseSetting()
+    {
+        _settingCanvas.gameObject.SetActive(false);
+    }
 }

@@ -20,6 +20,11 @@ public class HealthSystem : MonoBehaviour
         _currentPlayerHp = GameObject.FindWithTag("Player").GetComponent<PlayerController>().CurrentHp;
     }
 
+    private void OnDisable()
+    {
+        PlayerController.OnHpChange -= UpdateHpBar;
+    }
+
     private void UpdateHpBar(float value)
     {
         _currentPlayerHp += value;

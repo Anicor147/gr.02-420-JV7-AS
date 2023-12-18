@@ -16,7 +16,7 @@ namespace Script.Runtime.LevelCreatorScript
         }
         [SerializeField] private GameObject _wallPrefab;
         [SerializeField] private GameObject _gorillaPrefab;
-        [SerializeField] private GameObject[] _chickenPrefabs;
+        [SerializeField] private GameObject[] _itemsPrefabs;
         [SerializeField] private GameObject _grassPrefab;
         [SerializeField] private GameObject _homePrefab;
         [SerializeField] private Tilemap _tilemap;
@@ -64,7 +64,7 @@ namespace Script.Runtime.LevelCreatorScript
                                 _player.transform.position = cellCenter;
                                 break;
                             case 'F':
-                                InstantiateTile(RandomChicken(), j, -i);
+                                InstantiateTile(RandomItems(), j, -i);
                                 break;
                             case 'I':
                                  InstantiateTile(_homePrefab, j, -i);
@@ -89,12 +89,12 @@ namespace Script.Runtime.LevelCreatorScript
         }
 
 
-        private GameObject RandomChicken()
+        private GameObject RandomItems()
         {
-            int randomIndex = Random.Range(0, _chickenPrefabs.Length);
-            GameObject chickenPrefab = _chickenPrefabs[randomIndex];
+            int randomIndex = Random.Range(0, _itemsPrefabs.Length);
+            GameObject itemPrefab = _itemsPrefabs[randomIndex];
 
-            return chickenPrefab;
+            return itemPrefab;
         }
     }
 }
