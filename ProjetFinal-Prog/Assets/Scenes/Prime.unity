@@ -825,7 +825,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1037,6 +1037,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2116319934}
     m_Modifications:
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2116319930}
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NewBehaviourScript, Finals
+      objectReference: {fileID: 0}
+    - target: {fileID: 418697866102449210, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1531668135324074228, guid: eb01b091ac1b3924a977c0b7b748e59b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1533,6 +1561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1664769222596895370, guid: b9454ff806deeaa43bb8c1a1343e7e3e, type: 3}
+      propertyPath: _losingScreen
+      value: 
+      objectReference: {fileID: 1792570752}
     - target: {fileID: 5873576894176975679, guid: b9454ff806deeaa43bb8c1a1343e7e3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.51
@@ -2465,6 +2497,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453779499}
   m_CullTransparentMesh: 1
+--- !u!1 &1738070282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738070284}
+  - component: {fileID: 1738070283}
+  m_Layer: 0
+  m_Name: LevelSelector
+  m_TagString: LevelSelect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1738070283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738070282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a297c2c69a17d243b86703387e300ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1738070284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738070282}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.027893575, y: -0.3886731, z: -9.997326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760555699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,6 +2571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenuCanvas: {fileID: 502568774}
+  _gameOverCanvas: {fileID: 1792570752}
 --- !u!4 &1760555701
 Transform:
   m_ObjectHideFlags: 0
@@ -3399,7 +3476,7 @@ GameObject:
   - component: {fileID: 2116319930}
   m_Layer: 5
   m_Name: WinnigScreen
-  m_TagString: Untagged
+  m_TagString: WinnigScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3588,6 +3665,7 @@ SceneRoots:
   - {fileID: 1771585581}
   - {fileID: 2116319934}
   - {fileID: 1792570757}
+  - {fileID: 1738070284}
   - {fileID: 1011958902}
   - {fileID: 902579006}
   - {fileID: 668914715}

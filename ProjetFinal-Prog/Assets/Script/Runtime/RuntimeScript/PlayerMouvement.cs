@@ -47,7 +47,7 @@ namespace Script.Runtime.RuntimeScript
 
             _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
 
-            OnMovement?.Invoke(-1);
+            OnMovement?.Invoke(-0.4f);
 
 
                 CenterPlayer();

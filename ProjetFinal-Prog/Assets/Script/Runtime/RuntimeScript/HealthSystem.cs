@@ -23,6 +23,8 @@ public class HealthSystem : MonoBehaviour
     private void UpdateHpBar(float value)
     {
         _currentPlayerHp += value;
+        _currentPlayerHp = Mathf.Clamp(_currentPlayerHp, 0, 20);
+        Debug.Log(_currentPlayerHp);
         switch (_currentPlayerHp)
         {
             case <= 4:

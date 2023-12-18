@@ -8,7 +8,7 @@ namespace Script.Runtime.RuntimeScript
     public class PlayerController : MonoBehaviour
     {
         private float _hpMax = 20f;
-        private float _currentHp = 20f;
+        private float _currentHp;
         public float CurrentHp
         {
             get => _currentHp;
@@ -22,6 +22,7 @@ namespace Script.Runtime.RuntimeScript
         private void Start()
         {
             PlayerMouvement.OnMovement += UpdateHp;
+            _currentHp = _hpMax;
         }
 
         public void UpdateHp(float value)
@@ -29,6 +30,7 @@ namespace Script.Runtime.RuntimeScript
             _currentHp = Mathf.Clamp(_currentHp + value, 0, _hpMax);
             if (_currentHp == 0) Death();
             OnHpChange?.Invoke(value);
+            //Debug.Log(_currentHp);
         }
         private void Death()
         {

@@ -9,9 +9,11 @@ public class HouseScript : MonoBehaviour
     private void Start()
     {
         _winnigCanvas = GameObject.FindGameObjectWithTag("WinnigScreen");
+        _winnigCanvas.SetActive(false);
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

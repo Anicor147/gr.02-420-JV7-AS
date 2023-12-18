@@ -9,7 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
     
     public void MainMenuButton()
     {
-        SceneManager.LoadSceneAsync(0);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void RestartButton()
@@ -19,6 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void LevelOne()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Prime");
         SceneManager.LoadScene("LevelScene", LoadSceneMode.Additive);
     }
@@ -33,6 +35,9 @@ public class NewBehaviourScript : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.UnloadSceneAsync(2);
         GameObject.FindWithTag("LevelSelect").GetComponent<LevelSelector>().CurrentLevel++;
+        gameObject.SetActive(false);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
+        gameObject.SetActive(true);
     }
     
 }

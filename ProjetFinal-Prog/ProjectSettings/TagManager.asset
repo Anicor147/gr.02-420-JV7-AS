@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - DestructiveWall
   - tilemap
+  - WinnigScreen
+  - LevelSelect
   layers:
   - Default
   - TransparentFX
