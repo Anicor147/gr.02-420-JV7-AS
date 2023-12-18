@@ -12,9 +12,11 @@ namespace Script.Runtime.LevelCreatorScript
         [SerializeField] private GameObject _gorillaPrefab;
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject[] _chickenPrefabs;
-
+        [SerializeField] private GameObject _grassPrefab;
+        [SerializeField] private GameObject _homePrefab;
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private GameObject _objectParent;
+
         private void Start()
         {
             CreateLevel();
@@ -34,26 +36,25 @@ namespace Script.Runtime.LevelCreatorScript
                     string line = lines[i].Trim();
                     for (int j = 0; j < line.Length; j++)
                     {
+                        InstantiateTile(_grassPrefab, j, -i);
                         char tile = line[j];
-                        if (tile == '#')
+                        switch (tile)
                         {
-                            InstantiateTile(_wallPrefab, j, -i);
-                        }
-                        else if (tile == 'E')
-                        {
-                            InstantiateTile(_gorillaPrefab, j, -i);
-                        }
-                        else if (tile == 'P')
-                        {
-                            InstantiateTile(_playerPrefab, j, -i);
-                        }
-                        else if (tile == 'F')
-                        {
-                            InstantiateTile(RandomChicken(), j, -i);
-                        }
-                        else if (tile == 'I')
-                        {
-                            // InstantiateTile(_homePrefab, j, -i);
+                            case '#':
+                                InstantiateTile(_wallPrefab, j, -i);
+                                break;
+                            case 'E':
+                                InstantiateTile(_gorillaPrefab, j, -i);
+                                break;
+                            case 'P':
+                                InstantiateTile(_playerPrefab, j, -i);
+                                break;
+                            case 'F':
+                                InstantiateTile(RandomChicken(), j, -i);
+                                break;
+                            case 'I':
+                                 InstantiateTile(_homePrefab, j, -i);
+                                break;
                         }
                     }
                 }
@@ -70,7 +71,7 @@ namespace Script.Runtime.LevelCreatorScript
             Vector3Int cellPosition = new Vector3Int(x, y, 0);
             Vector3 cellCenter = _tilemap.GetCellCenterWorld(cellPosition);
 
-            Instantiate(prefab, cellCenter, Quaternion.identity , _objectParent.transform);
+            Instantiate(prefab, cellCenter, Quaternion.identity, _objectParent.transform);
         }
 
 
