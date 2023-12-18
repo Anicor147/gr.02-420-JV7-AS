@@ -29,30 +29,10 @@ namespace Script.Runtime.RuntimeScript
             Debug.Log(_numberOfCharge.ToString());
         }
 
-        /*private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.CompareTag("DestructiveWall") && _numberOfCharge > 0)
-            {
-                var hitPosition = Vector3.zero;
-                foreach (var hit in other.contacts)
-                {
-                    hitPosition.x = hit.point.x - 0.01f * hit.normal.x;
-                    hitPosition.y = hit.point.y - 0.02f * hit.normal.y;
-                    var cellPositionForPlayer = _tilemap.WorldToCell(hitPosition);
-                    var cellCenterForPlayer = _tilemap.GetCellCenterWorld(cellPositionForPlayer);
-                    _tilemap.SetTile(_tilemap.WorldToCell(hitPosition), null);
-                    _rigidbody2D.MovePosition(cellCenterForPlayer);
-                    _numberOfCharge--;
-                    OnChargeUpdate?.Invoke(_numberOfCharge);
-                    Debug.Log(_numberOfCharge.ToString());
-                    ChargeIsMaxed = false;
-                    break;
-                }
-            }
-        }*/
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            Debug.Log(other.gameObject.name);
             if (other.gameObject.CompareTag("DestructiveWall") && _numberOfCharge > 0)
             {
                 _numberOfCharge--;
@@ -60,6 +40,7 @@ namespace Script.Runtime.RuntimeScript
                 var cellPositionForPlayer = _tilemap.WorldToCell(transform.position);
                 var cellCenterForPlayer = _tilemap.GetCellCenterWorld(cellPositionForPlayer);
                 _rigidbody2D.MovePosition(cellCenterForPlayer);
+                OnChargeUpdate?.Invoke(_numberOfCharge);
                 Destroy(other.gameObject);
             }
             else
