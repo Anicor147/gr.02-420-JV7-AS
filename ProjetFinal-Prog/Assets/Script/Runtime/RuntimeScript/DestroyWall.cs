@@ -14,6 +14,8 @@ namespace Script.Runtime.RuntimeScript
         private const int _numberOfMaxCharge = 3;
         public bool ChargeIsMaxed { get; private set; }
 
+        internal static event Action<int> OnChargeUpdate;
+
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -41,6 +43,7 @@ namespace Script.Runtime.RuntimeScript
                     _tilemap.SetTile(_tilemap.WorldToCell(hitPosition), null);
                     _rigidbody2D.MovePosition(cellCenterForPlayer);
                     _numberOfCharge--;
+                    OnChargeUpdate?.Invoke(_numberOfCharge);
                     Debug.Log(_numberOfCharge.ToString());
                     ChargeIsMaxed = false;
                     break;

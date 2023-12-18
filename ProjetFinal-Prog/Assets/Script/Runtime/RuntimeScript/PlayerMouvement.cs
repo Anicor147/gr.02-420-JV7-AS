@@ -36,27 +36,12 @@ namespace Script.Runtime.RuntimeScript
         private void Movement()
         {
             _newPosition = Vector2.zero;
-            /*switch (Input.inputString)
-            {
-                case "d":
-                    _newPosition = Vector2.right;
-                    break;
-                case "a":
-                    _newPosition = Vector2.left;
-                    break;
-                case "s":
-                    _newPosition = Vector2.down;
-                    break;
-                case "w":
-                    _newPosition = Vector2.up;
-                    break;
-            }
-            Debug.Log(Input.inputString);
-            */
-            if (Input.GetKeyDown(KeyCode.D)) _newPosition = Vector2.right;
-            else if (Input.GetKeyDown(KeyCode.A)) _newPosition = Vector2.left;
-            else if (Input.GetKeyDown(KeyCode.S)) _newPosition = Vector2.down;
-            else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
+
+                if (Input.GetKeyDown(KeyCode.D)) _newPosition = Vector2.right;
+                else if (Input.GetKeyDown(KeyCode.A)) _newPosition = Vector2.left;
+                else if (Input.GetKeyDown(KeyCode.S)) _newPosition = Vector2.down;
+                else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
+
 
             if (_newPosition == Vector2.zero) return;
 
@@ -64,24 +49,10 @@ namespace Script.Runtime.RuntimeScript
 
             OnMovement?.Invoke(-1);
 
-            CenterPlayer();
-
-            /*else _isInputPressed = true;*/
-        }
-
-        /*private void FixedUpdate()
-        {
-            if(_isInputPressed)
-            {
-                _isInputPressed = false;
-
-                _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
-
-                OnMovement?.Invoke(-1);
 
                 CenterPlayer();
-            }
-        }*/
+        }
+
 
         private void CenterPlayer()
         {
