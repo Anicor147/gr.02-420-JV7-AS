@@ -8,17 +8,25 @@ namespace Script.Runtime.LevelCreatorScript
     public class LevelCreatorScript : MonoBehaviour
     {
         [SerializeField] private string _levelFileName = "Level0";
+
+        public string LevelFileName
+        {
+            get => _levelFileName;
+            set => _levelFileName = value;
+        }
         [SerializeField] private GameObject _wallPrefab;
         [SerializeField] private GameObject _gorillaPrefab;
-        [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject[] _chickenPrefabs;
         [SerializeField] private GameObject _grassPrefab;
         [SerializeField] private GameObject _homePrefab;
         [SerializeField] private Tilemap _tilemap;
-        [SerializeField] private GameObject _objectParent;
+        [SerializeField] private GameObject _objectParent; 
+        [SerializeField]private GameObject _solidWall;
+        private GameObject _player;
 
         private void Start()
         {
+            _player = GameObject.FindWithTag("Player");
             CreateLevel();
         }
 
@@ -40,6 +48,9 @@ namespace Script.Runtime.LevelCreatorScript
                         char tile = line[j];
                         switch (tile)
                         {
+                            case '!':
+                                InstantiateTile(_solidWall,j,-i);
+                                break;
                             case '#':
                                 InstantiateTile(_wallPrefab, j, -i);
                                 break;
@@ -47,7 +58,9 @@ namespace Script.Runtime.LevelCreatorScript
                                 InstantiateTile(_gorillaPrefab, j, -i);
                                 break;
                             case 'P':
-                                InstantiateTile(_playerPrefab, j, -i);
+                                Vector3Int cellPosition = new Vector3Int(j, -i, 0);
+                                Vector3 cellCenter = _tilemap.GetCellCenterWorld(cellPosition);
+                                _player.transform.position = cellCenter;
                                 break;
                             case 'F':
                                 InstantiateTile(RandomChicken(), j, -i);

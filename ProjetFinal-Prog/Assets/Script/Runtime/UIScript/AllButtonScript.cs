@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-   
     public void MainMenuButton()
     {
         SceneManager.LoadSceneAsync(0);
@@ -18,7 +17,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void LevelOne()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Prime");
+        SceneManager.LoadScene("LevelScene", LoadSceneMode.Additive);
     }
 
     public void ExitApp()

@@ -7,7 +7,7 @@ namespace Script.Runtime.RuntimeScript
 {
     public class PlayerController : MonoBehaviour
     {
-
+        [SerializeField] private GameObject _losingScreen;
         private float _hpMax = 20f;
         private float _currentHp = 20f;
         public float CurrentHp
