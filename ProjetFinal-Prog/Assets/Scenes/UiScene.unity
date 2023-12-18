@@ -135,30 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 5937261294370428952, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
-      propertyPath: m_text
-      value: Go Back To Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5937261294370428952, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
-      propertyPath: m_fontSize
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 5937261294370428952, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
-      propertyPath: m_fontAsset
+    - target: {fileID: 7659218043190232804, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 3ffa162d31d7cb64ca04208d59cf3ffd, type: 2}
-    - target: {fileID: 5937261294370428952, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 5937261294370428952, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 4053365057330748082, guid: 3ffa162d31d7cb64ca04208d59cf3ffd, type: 2}
-    - target: {fileID: 5937261294370428952, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1393170578}
     - target: {fileID: 8846500452877673002, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -261,6 +241,7 @@ GameObject:
   - component: {fileID: 427473832}
   - component: {fileID: 427473831}
   - component: {fileID: 427473830}
+  - component: {fileID: 427473834}
   m_Layer: 5
   m_Name: LosingScreen
   m_TagString: Untagged
@@ -297,10 +278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -353,6 +334,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &427473834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427473829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e82d72bb75ffdc4e86fb9b59e01b3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &524244804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,6 +363,14 @@ PrefabInstance:
       value: 'Go To Main Menu
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659218043190232804, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 427473834}
+    - target: {fileID: 7659218043190232804, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 8846500452877673002, guid: ad2ab8cba76b1ec458f32800bca299db, type: 3}
       propertyPath: m_Pivot.x
@@ -748,6 +749,7 @@ GameObject:
   - component: {fileID: 1393170576}
   - component: {fileID: 1393170575}
   - component: {fileID: 1393170574}
+  - component: {fileID: 1393170578}
   m_Layer: 5
   m_Name: WinnigScreen
   m_TagString: Untagged
@@ -840,6 +842,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1393170578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393170573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e82d72bb75ffdc4e86fb9b59e01b3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1579162205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1084,34 @@ PrefabInstance:
     - target: {fileID: 909836826597489782, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 427473834}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NewBehaviourScript, Finals
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030688805185362104, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8203826920217544756, guid: 5b88cda1b83f8b74aa11d8f65e32f1ac, type: 3}
       propertyPath: m_Name
