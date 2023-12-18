@@ -7,7 +7,7 @@ namespace Script.Runtime.RuntimeScript
 {
     public class DestroyWall : MonoBehaviour
     {
-        [SerializeField] private Tilemap _tilemap;
+        private Tilemap _tilemap;
         private Rigidbody2D _rigidbody2D;
 
         private int _numberOfCharge = 3;
@@ -19,6 +19,7 @@ namespace Script.Runtime.RuntimeScript
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            _tilemap = GameObject.FindWithTag("tilemap").GetComponent<Tilemap>();
         }
 
         public void UpdateCharges()
@@ -28,7 +29,7 @@ namespace Script.Runtime.RuntimeScript
             Debug.Log(_numberOfCharge.ToString());
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        /*private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("DestructiveWall") && _numberOfCharge > 0)
             {
@@ -47,6 +48,25 @@ namespace Script.Runtime.RuntimeScript
                     ChargeIsMaxed = false;
                     break;
                 }
+            }
+        }*/
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("DestructiveWall") && _numberOfCharge > 0)
+            {
+                _numberOfCharge--;
+                ChargeIsMaxed = false;
+                var cellPositionForPlayer = _tilemap.WorldToCell(transform.position);
+                var cellCenterForPlayer = _tilemap.GetCellCenterWorld(cellPositionForPlayer);
+                _rigidbody2D.MovePosition(cellCenterForPlayer);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                var cellPositionForPlayer = _tilemap.WorldToCell(transform.position);
+                var cellCenterForPlayer = _tilemap.GetCellCenterWorld(cellPositionForPlayer);
+                _rigidbody2D.MovePosition(cellCenterForPlayer);
             }
         }
     }
