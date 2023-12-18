@@ -23,7 +23,7 @@ namespace Script.Runtime.RuntimeScript
         {
             _numberOfCharge = Math.Min(_numberOfCharge + 1, _numberOfMaxCharge);
             ChargeIsMaxed = _numberOfCharge == _numberOfMaxCharge;
-            Debug.Log(_numberOfCharge);
+            Debug.Log(_numberOfCharge.ToString());
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -40,7 +40,7 @@ namespace Script.Runtime.RuntimeScript
                     _tilemap.SetTile(_tilemap.WorldToCell(hitPosition), null);
                     _rigidbody2D.MovePosition(cellCenterForPlayer);
                     _numberOfCharge--;
-                    Debug.Log(_numberOfCharge);
+                    Debug.Log(_numberOfCharge.ToString());
                     ChargeIsMaxed = false;
                     break;
                 }
