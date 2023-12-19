@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.Tilemaps;
 using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Script.Runtime.RuntimeScript
 {
@@ -12,11 +13,8 @@ namespace Script.Runtime.RuntimeScript
     {
         private Tilemap _tilemap;
         private Rigidbody2D _rigidbody2D;
-        internal static event Action<float> OnMovement;
-        private float x;
-        private float y;
         private Vector2 _newPosition;
-        private bool _isInputPressed;
+        internal static event Action<float> OnMovement;
 
         private void Awake()
         {
@@ -40,18 +38,31 @@ namespace Script.Runtime.RuntimeScript
             else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
 
             if (_newPosition == Vector2.zero) return;
+            FlipSprite(_newPosition);
             _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
             OnMovement?.Invoke(-2f);
 
             CenterPlayer();
         }
 
-
         private void CenterPlayer()
         {
             var cellPositionForPlayer = _tilemap.WorldToCell(transform.position);
             var cellCenterForPlayer = _tilemap.GetCellCenterWorld(cellPositionForPlayer);
             transform.position = cellCenterForPlayer;
+        }
+
+        private void FlipSprite(Vector2 value)
+        {
+            switch (value.x)
+            {
+                case > 0:
+                    transform.localScale = new Vector3(1, 1, 1);
+                    break;
+                case < 0:
+                    transform.localScale = new Vector3(-1, 1, 1);
+                    break;
+            }
         }
     }
 }
