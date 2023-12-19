@@ -4,6 +4,7 @@
 - WASD to move
 -  Collect Chicken to increase life
 -  Collect Axe to increase the number of time you can destroy a wall.
+-  https://anicor147.itch.io/dino-maze-runner passwd : root123
 
 ## Members:
 - **Anthony Niculescu-Cornejo**
