@@ -9,12 +9,20 @@ namespace Script.Runtime.RuntimeScript
     {
         private Tilemap _tilemap;
         private Rigidbody2D _rigidbody2D;
-
         private int _numberOfCharge = 3;
         private const int _numberOfMaxCharge = 3;
         public bool ChargeIsMaxed { get; private set; }
-
         internal static event Action<int> OnChargeUpdate;
+
+        public int NumberOfCharge
+        {
+            get => _numberOfCharge;
+            set
+            {
+                _numberOfCharge = value;
+                OnChargeUpdate?.Invoke(_numberOfCharge);
+            }
+        }
 
         private void Awake()
         {
@@ -26,13 +34,11 @@ namespace Script.Runtime.RuntimeScript
         {
             _numberOfCharge = Math.Min(_numberOfCharge + 1, _numberOfMaxCharge);
             ChargeIsMaxed = _numberOfCharge == _numberOfMaxCharge;
-            Debug.Log(_numberOfCharge.ToString());
+            OnChargeUpdate?.Invoke(_numberOfCharge);
         }
-
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log(other.gameObject.name);
             if (other.gameObject.CompareTag("DestructiveWall") && _numberOfCharge > 0)
             {
                 _numberOfCharge--;

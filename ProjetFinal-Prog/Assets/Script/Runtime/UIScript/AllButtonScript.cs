@@ -1,52 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
+using Script.Runtime.LevelCreatorScript;
+using Script.Runtime.RuntimeScript;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class NewBehaviourScript : MonoBehaviour
+namespace Script.Runtime.UIScript
 {
-    [SerializeField] private Canvas _settingCanvas;
-    public void MainMenuButton()
+    public class NewBehaviourScript : MonoBehaviour
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
-    }
+        [SerializeField] private Canvas _settingCanvas;
+        [SerializeField] private GameObject _buttonNextLvl;
 
-    public void RestartButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    
-    public void LevelOne()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Prime");
-        SceneManager.LoadScene("LevelScene", LoadSceneMode.Additive);
-    }
+        public void MainMenuButton()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(0);
+        }
 
-    public void ExitApp()
-    {
-        Application.Quit();
-    }
+        public void LevelOne()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Prime");
+            SceneManager.LoadScene("LevelScene", LoadSceneMode.Additive);
+        }
 
-    public void GoToNextLevel()
-    {
-        Time.timeScale = 1;
-        SceneManager.UnloadSceneAsync(2);
-        GameObject.FindWithTag("LevelSelect").GetComponent<LevelSelector>().CurrentLevel++;
-        gameObject.SetActive(false);
-        SceneManager.LoadScene(2, LoadSceneMode.Additive);
-        gameObject.SetActive(true);
-    }
+        public void ExitApp()
+        {
+            Application.Quit();
+        }
 
-    public void OpenSetting()
-    {
-        _settingCanvas.gameObject.SetActive(true);
-    }
+        public void GoToNextLevel()
+        {
+            Time.timeScale = 1;
+            SceneManager.UnloadSceneAsync(2);
+            GameObject.FindWithTag("LevelSelect").GetComponent<LevelSelector>().CurrentLevel++;
+            gameObject.SetActive(false);
+            SceneManager.LoadScene(2, LoadSceneMode.Additive);
+            GameObject.FindWithTag("Player").GetComponent<PlayerController>().CurrentHp = 100;
+            GameObject.FindWithTag("Player").GetComponent<DestroyWall>().NumberOfCharge = 3;
+            gameObject.SetActive(true);
+            if (GameObject.FindWithTag("LevelSelect").GetComponent<LevelSelector>().CurrentLevel == 3)
+            {
+                _buttonNextLvl.SetActive(false);
+            }
+        }
 
-    public void CloseSetting()
-    {
-        _settingCanvas.gameObject.SetActive(false);
+        public void OpenSetting()
+        {
+            _settingCanvas.gameObject.SetActive(true);
+        }
     }
 }

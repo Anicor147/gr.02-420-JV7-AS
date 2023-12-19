@@ -10,7 +10,6 @@ namespace Script.Runtime.RuntimeScript
 {
     public class PlayerMouvement : MonoBehaviour
     {
-        //[SerializeField] private Tilemap _tilemap;
         private Tilemap _tilemap;
         private Rigidbody2D _rigidbody2D;
         internal static event Action<float> OnMovement;
@@ -26,8 +25,6 @@ namespace Script.Runtime.RuntimeScript
             CenterPlayer();
         }
 
-        private void Start() { }
-
         private void Update()
         {
             Movement();
@@ -37,20 +34,16 @@ namespace Script.Runtime.RuntimeScript
         {
             _newPosition = Vector2.zero;
 
-                if (Input.GetKeyDown(KeyCode.D)) _newPosition = Vector2.right;
-                else if (Input.GetKeyDown(KeyCode.A)) _newPosition = Vector2.left;
-                else if (Input.GetKeyDown(KeyCode.S)) _newPosition = Vector2.down;
-                else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
-
+            if (Input.GetKeyDown(KeyCode.D)) _newPosition = Vector2.right;
+            else if (Input.GetKeyDown(KeyCode.A)) _newPosition = Vector2.left;
+            else if (Input.GetKeyDown(KeyCode.S)) _newPosition = Vector2.down;
+            else if (Input.GetKeyDown(KeyCode.W)) _newPosition = Vector2.up;
 
             if (_newPosition == Vector2.zero) return;
-
             _rigidbody2D.MovePosition(_rigidbody2D.position + _newPosition);
+            OnMovement?.Invoke(-2f);
 
-            OnMovement?.Invoke(-0.4f);
-
-
-                CenterPlayer();
+            CenterPlayer();
         }
 
 

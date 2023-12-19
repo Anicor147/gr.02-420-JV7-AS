@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using Script.Runtime.RuntimeScript;
 using Script.Runtime.UIScript;
 using UnityEngine;
 
-namespace Script.Runtime.GameStateSM_Script
+namespace Script.Runtime.GameStateScript
 {
     public class GameStateSM : MonoBehaviour
     {
@@ -20,6 +19,7 @@ namespace Script.Runtime.GameStateSM_Script
             get => _pauseMenuCanvas;
             set => _pauseMenuCanvas = value;
         }
+
         public GameObject GameOverCanvas
         {
             get => _gameOverCanvas;

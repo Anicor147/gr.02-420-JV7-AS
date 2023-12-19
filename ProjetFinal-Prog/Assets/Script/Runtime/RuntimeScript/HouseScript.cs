@@ -1,22 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HouseScript : MonoBehaviour
+namespace Script.Runtime.RuntimeScript
 {
-    private GameObject _winnigCanvas;
-    private void Start()
+    public class HouseScript : MonoBehaviour
     {
-        _winnigCanvas = GameObject.FindGameObjectWithTag("WinnigScreen");
-        _winnigCanvas.SetActive(false);
-        
-    }
+        private GameObject _winnigCanvas;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        private void Start()
         {
+            _winnigCanvas = GameObject.FindGameObjectWithTag("WinnigScreen");
+            _winnigCanvas.SetActive(false);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
             _winnigCanvas.SetActive(true);
             Time.timeScale = 0;
         }

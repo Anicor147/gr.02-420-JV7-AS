@@ -14,6 +14,7 @@ namespace Script.Runtime.LevelCreatorScript
             get => _levelFileName;
             set => _levelFileName = value;
         }
+
         [SerializeField] private GameObject _wallPrefab;
         [SerializeField] private GameObject _gorillaPrefab;
         [SerializeField] private GameObject[] _itemsPrefabs;
@@ -21,7 +22,7 @@ namespace Script.Runtime.LevelCreatorScript
         [SerializeField] private GameObject _homePrefab;
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private GameObject _objectParent;
-        [SerializeField]private GameObject _solidWall;
+        [SerializeField] private GameObject _solidWall;
         private GameObject _player;
 
         private void Start()
@@ -50,7 +51,7 @@ namespace Script.Runtime.LevelCreatorScript
                         switch (tile)
                         {
                             case '!':
-                                InstantiateTile(_solidWall,j,-i);
+                                InstantiateTile(_solidWall, j, -i);
                                 break;
                             case '#':
                                 InstantiateTile(_wallPrefab, j, -i);
@@ -67,15 +68,11 @@ namespace Script.Runtime.LevelCreatorScript
                                 InstantiateTile(RandomItems(), j, -i);
                                 break;
                             case 'I':
-                                 InstantiateTile(_homePrefab, j, -i);
+                                InstantiateTile(_homePrefab, j, -i);
                                 break;
                         }
                     }
                 }
-            }
-            else
-            {
-                Debug.LogError("Level file not found: " + _levelFileName);
             }
         }
 

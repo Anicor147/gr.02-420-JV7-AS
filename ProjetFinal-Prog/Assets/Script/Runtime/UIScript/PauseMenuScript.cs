@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Script.Runtime.UIScript
 {
@@ -14,7 +15,8 @@ namespace Script.Runtime.UIScript
 
         public void BackToMenu()
         {
-        
+            Time.timeScale = 1;
+            SceneManager.LoadScene(0);
         }
     }
 }

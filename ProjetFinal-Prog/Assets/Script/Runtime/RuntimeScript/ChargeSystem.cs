@@ -1,21 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Script.Runtime.RuntimeScript;
+using TMPro;
 using UnityEngine;
 
-public class ChargeSystem : MonoBehaviour
+namespace Script.Runtime.RuntimeScript
 {
-    [SerializeField] private GameObject[] _numberOfCharge;
-
-   
-    void Start()
+    public class ChargeSystem : MonoBehaviour
     {
-        DestroyWall.OnChargeUpdate += ChargeUpdate;
-    }
+        [SerializeField] private TMP_Text _chargeText;
+        private int _numberOfCharges = 3;
 
-    public void ChargeUpdate(int obj)
-    {
-        _numberOfCharge[obj].SetActive(false);
+        private void Start()
+        {
+            _chargeText.text = _numberOfCharges.ToString();
+            DestroyWall.OnChargeUpdate += ChargeUpdate;
+        }
+
+        public void ChargeUpdate(int obj)
+        {
+            _chargeText.text = obj.ToString();
+        }
     }
 }

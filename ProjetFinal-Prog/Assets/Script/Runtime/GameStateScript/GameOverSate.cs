@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Script.Runtime.GameStateSM_Script
+namespace Script.Runtime.GameStateScript
 {
     public class GameOverSate : GameState
     {

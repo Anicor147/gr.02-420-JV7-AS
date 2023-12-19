@@ -1,4 +1,4 @@
-namespace Script.Runtime.GameStateSM_Script
+namespace Script.Runtime.GameStateScript
 {
     public class GameState
     {
