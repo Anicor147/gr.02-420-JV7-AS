@@ -1,8 +1,9 @@
-# Arctic Maze Runner
+# Dino Maze Runner
 
 ## Information
-> Write information about the game, such as the controls, the goal, easter eggs, etc.
-Make it fun. For any bug related information, see known issues.
+- WASD to move
+-  Collect Chicken to increase life
+-  Collect Axe to increase the number of time you can destroy a wall.
 
 ## Members:
 - **Anthony Niculescu-Cornejo**
@@ -10,18 +11,21 @@ Make it fun. For any bug related information, see known issues.
 - **François Brinck-Boucher**
 
 ## Features:
-- Load the map and create all entities - **Name 1**
-- Move the Penguin - **Name 1**
-- Update the Health (energy) when penguin eats or moves - **Name 1**
-- Attack the enemies - **Name 1**
-- Use Wall Destroyers - **Name 1**
-- Game Over - **Name 1**
-- Game Winner - **Name 1**
+- Load the map and create all entities - **Anthony Niculescu-Cornejo, François Brinck-Boucher**
+- Move the Penguin - **Kevin Durocher** , **Anthony Niculescu-Cornejo** , **François Brinck-Boucher**
+- Update the Health (energy) when penguin eats or moves - **Kevin Durocher , Anthony Niculescu-Cornejo , François Brinck-Boucher**
+- Attack the enemies - **Anthony Niculescu-Cornejo**
+- Use Wall Destroyers - **Anthony Niculescu-Cornejo**
+- Game Over - **Kevin Durocher**
+- Game Winner - **Kevin Durocher**
 
 ## Additional Features:
 
-- Ex: Main Menu - **Name 1**
-- Ex: Main Menu - **Name 2**
+- Update Charge for destroying walls : **François Brinck-Boucher**
+- Main Menu - **Kevin Durocher**
+- Pause Menu - **Anthony Niculescu-Cornejo**
+- Audio - **Anthony Niculescu-Cornejo , Kevin Durocher**
+- Animation - **François Brinck-Boucher**
 
 ## Setup naming conventions
 
